@@ -3,6 +3,7 @@
 > **High-Performance Encrypted DNS Ingress Gateway — Engineered in Rust**  
 > Line-rate protocol termination (DoQ / DoH / DoT), token-bucket abuse shaping, zero-copy backend routing, and zero public port 53.
 
+[![CI](https://github.com/koodoxz/gapura/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/koodoxz/gapura/actions)
 [![Rust](https://img.shields.io/badge/Rust-1.75+-000000?style=flat&logo=rust)](https://www.rust-lang.org/)
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0--or--later-blue.svg)](LICENSE)
 [![Protocols](https://img.shields.io/badge/Protocols-DoQ%20%7C%20DoH%20%7C%20DoT%20%7C%20HTTP-green.svg)](#core-capabilities)

@@ -6,6 +6,7 @@
 [![Rust](https://img.shields.io/badge/Rust-1.75+-000000?style=flat&logo=rust)](https://www.rust-lang.org/)
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0--or--later-blue.svg)](LICENSE)
 [![Protocols](https://img.shields.io/badge/Protocols-DoH%20%7C%20DoT%20%7C%20DoQ-green.svg)](#protocols)
+[![Ecosystem](https://img.shields.io/badge/Ecosystem-Architecture%20Portal-00f2fe.svg)](https://koodoxz.github.io)
 
 ---
 

@@ -1,0 +1,47 @@
+# Listen addresses
+http_addr: "0.0.0.0:80"      # HTTP (redirect to HTTPS)
+https_addr: "0.0.0.0:443"    # DoH (HTTPS)
+dot_addr: "0.0.0.0:853"      # DoT (TLS)
+doq_addr: "0.0.0.0:8853"     # DoQ (QUIC) - NEW!
+metrics_addr: "0.0.0.0:9090" # Prometheus metrics
+
+# TLS configuration
+tls:
+  auto_cert: false
+  domains:
+    - dns.example.com
+    - api.example.com
+  # Use Let's Encrypt certs (adjust paths for your VPS)
+  cert_file: "/etc/letsencrypt/live/dns.example.com/fullchain.pem"
+  key_file: "/etc/letsencrypt/live/dns.example.com/privkey.pem"
+  acme_directory: "https://acme-v02.api.letsencrypt.org/directory"
+  cache_dir: "data/certs"
+
+# Upstream services
+upstreams:
+  strategy: primary  # primary | round_robin | weighted | geoip
+  health_check_interval_secs: 5
+  
+  backends:
+    - name: mimir-new
+      address: "127.0.0.1:53"
+      weight: 100
+      region: "ID-JKT"
+
+  # SVALINN WAF (optional - currently suspended)
+  # svalinn: "127.0.0.1:3000"
+
+# Rate limiting
+rate_limit:
+  enabled: true
+  requests_per_second: 100
+  burst_size: 200
+  client_ttl_secs: 300
+
+# GeoIP configuration
+geoip:
+  enabled: true
+  database_path: "/opt/odin/data/GeoLite2-Country.mmdb"
+
+# Logging
+log_level: info
